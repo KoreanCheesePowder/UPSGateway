@@ -1,6 +1,6 @@
 {
     "mnmn": "SmartThingsCommunity",
-    "vid": "d34aeed2-98c9-3aca-9646-bb0351bd1001",
+    "vid": "ce7b52ab-de97-3ff5-83bf-2ac73310046e",
     "version": "0.0.1",
     "type": "profile",
     "dashboard": {
@@ -63,9 +63,28 @@
         }
     ],
     "automation": {
-        "conditions": [],
+        "conditions": [
+            {
+                "component": "main",
+                "capability": "buildbook37604.eatonUpsStatus",
+                "version": 1,
+                "values": [
+                    {
+                        "enabledValues": [
+                            "정상 전원",
+                            "배터리 운전",
+                            "배터리 부족",
+                            "통신 오류"
+                        ],
+                        "key": "status.value"
+                    }
+                ],
+                "patch": [],
+                "exclusion": []
+            }
+        ],
         "actions": []
     },
-    "presentationId": "d34aeed2-98c9-3aca-9646-bb0351bd1001",
+    "presentationId": "ce7b52ab-de97-3ff5-83bf-2ac73310046e",
     "manufacturerName": "SmartThingsCommunity"
 }

@@ -2,7 +2,7 @@ $ErrorActionPreference = "Stop"
 Set-Location $PSScriptRoot
 
 Write-Host "==============================================="
-Write-Host " C.P Eaton UPS Gateway Edge Driver v2.9.3 dashboard fix"
+Write-Host " C.P Eaton UPS Gateway Edge Driver v2.9.3 dashboard + routine fix"
 Write-Host "==============================================="
 Write-Host ""
 
@@ -14,7 +14,7 @@ if ($configText -notmatch "packageKey:\s*cp-eaton-ups-gateway-v212") {
 & smartthings --version
 if ($LASTEXITCODE -ne 0) { throw "SmartThings CLI not available." }
 
-Write-Host "[1/2] Creating a fresh dashboard Device Presentation..."
+Write-Host "[1/2] Creating dashboard + routine Device Presentation..."
 $generated = ".\generated-device-config.json"
 if (Test-Path $generated) { Remove-Item $generated -Force }
 & smartthings presentation:device-config:create -i ".\device-config.json" -o $generated -j
@@ -22,7 +22,9 @@ if ($LASTEXITCODE -ne 0 -or -not (Test-Path $generated)) {
   throw "Device presentation creation failed."
 }
 
-$dp = Get-Content -Raw $generated | ConvertFrom-Json
+$generatedPath = (Resolve-Path $generated).Path
+$generatedText = [System.IO.File]::ReadAllText($generatedPath, (New-Object System.Text.UTF8Encoding($false)))
+$dp = $generatedText | ConvertFrom-Json
 $vid = if ($dp.presentationId) { [string]$dp.presentationId } elseif ($dp.vid) { [string]$dp.vid } else { "" }
 $mnmn = if ($dp.manufacturerName) { [string]$dp.manufacturerName } elseif ($dp.mnmn) { [string]$dp.mnmn } else { "" }
 if ([string]::IsNullOrWhiteSpace($vid) -or [string]::IsNullOrWhiteSpace($mnmn)) {
@@ -37,11 +39,11 @@ $profile = [regex]::Replace($profile, '(?m)^\s*vid:\s*.*$', "  vid: $vid")
 Write-Host "Presentation VID: $vid"
 Write-Host "UPS profile: cp-eaton-ups-device-dashboard"
 
-Write-Host "[2/2] Packaging/installing v2.9.3 dashboard fix..."
+Write-Host "[2/2] Packaging/installing v2.9.3 dashboard + routine fix..."
 & smartthings edge:drivers:package . --install
 if ($LASTEXITCODE -ne 0) { throw "Driver package/install failed." }
 
 Write-Host ""
 Write-Host "Update completed."
 Write-Host "Restart the Edge Driver/container once, then fully close and reopen SmartThings."
-Write-Host "The UPS device will switch itself to the refreshed profile and restore the summary from cached runtime/load values."
+Write-Host "The UPS device will switch itself to the refreshed profile. UPS status will be available as a Routine condition."

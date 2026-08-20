@@ -16,12 +16,62 @@
     "basicPlus": []
   },
   "detailView": [
-    {"component":"main","capability":"powerSource","version":1,"values":[]},
-    {"component":"main","capability":"powerMeter","version":1,"values":[]},
-    {"component":"main","capability":"buildbook37604.eatonUpsStatus","version":1,"values":[]},
-    {"component":"main","capability":"buildbook37604.upsRuntime","version":1,"values":[]},
-    {"component":"main","capability":"buildbook37604.eatonUpsLoad","version":1,"values":[]},
-    {"component":"main","capability":"buildbook37604.driverInformation","version":1,"values":[]}
+    {
+      "component": "main",
+      "capability": "powerSource",
+      "version": 1,
+      "values": []
+    },
+    {
+      "component": "main",
+      "capability": "powerMeter",
+      "version": 1,
+      "values": []
+    },
+    {
+      "component": "main",
+      "capability": "buildbook37604.eatonUpsStatus",
+      "version": 1,
+      "values": []
+    },
+    {
+      "component": "main",
+      "capability": "buildbook37604.upsRuntime",
+      "version": 1,
+      "values": []
+    },
+    {
+      "component": "main",
+      "capability": "buildbook37604.eatonUpsLoad",
+      "version": 1,
+      "values": []
+    },
+    {
+      "component": "main",
+      "capability": "buildbook37604.driverInformation",
+      "version": 1,
+      "values": []
+    }
   ],
-  "automation": {"conditions": [], "actions": []}
+  "automation": {
+    "conditions": [
+      {
+        "component": "main",
+        "capability": "buildbook37604.eatonUpsStatus",
+        "version": 1,
+        "values": [
+          {
+            "key": "status.value",
+            "enabledValues": [
+              "정상 전원",
+              "배터리 운전",
+              "배터리 부족",
+              "통신 오류"
+            ]
+          }
+        ]
+      }
+    ],
+    "actions": []
+  }
 }
