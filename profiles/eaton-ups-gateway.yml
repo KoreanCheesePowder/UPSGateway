@@ -1,0 +1,13 @@
+name: cp-eaton-ups-gateway
+components:
+  - id: main
+    label: C.P Eaton UPS Gateway
+    capabilities:
+      - id: refresh
+        version: 1
+      - id: buildbook37604.eatonUpsGatewaySyncV2
+        version: 1
+      - id: buildbook37604.driverInformation
+        version: 1
+    categories:
+      - name: Hub

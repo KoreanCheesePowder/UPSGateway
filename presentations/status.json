@@ -1,0 +1,46 @@
+{
+  "dashboard": {
+    "states": [],
+    "actions": [],
+    "panelItems": []
+  },
+  "detailView": [
+    {
+      "label": "UPS 상태",
+      "displayType": "state",
+      "state": {
+        "label": "{{status.value}}"
+      }
+    }
+  ],
+  "automation": {
+    "conditions": [
+      {
+        "label": "UPS 상태",
+        "displayType": "list",
+        "list": {
+          "alternatives": [
+            {
+              "key": "정상 전원",
+              "value": "정상 전원"
+            },
+            {
+              "key": "배터리 운전",
+              "value": "배터리 운전"
+            },
+            {
+              "key": "배터리 부족",
+              "value": "배터리 부족"
+            },
+            {
+              "key": "통신 오류",
+              "value": "통신 오류"
+            }
+          ],
+          "value": "status.value"
+        }
+      }
+    ],
+    "actions": []
+  }
+}

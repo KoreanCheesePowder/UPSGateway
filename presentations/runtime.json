@@ -1,0 +1,13 @@
+{
+  "dashboard": {
+    "states": [{"label": "예상시간  {{runtimeText.value}}"}],
+    "actions": [],
+    "panelItems": []
+  },
+  "detailView": [{
+    "label": "예상시간",
+    "displayType": "state",
+    "state": {"label": "{{runtimeText.value}}"}
+  }],
+  "automation": {"conditions": [], "actions": []}
+}

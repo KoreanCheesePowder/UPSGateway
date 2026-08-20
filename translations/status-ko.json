@@ -1,0 +1,12 @@
+{
+  "tag": "ko",
+  "label": "UPS 상태",
+  "attributes": {
+    "status": {
+      "label": "UPS 상태",
+      "displayTemplate": "{{value}}",
+      "i18n": {}
+    }
+  },
+  "commands": {}
+}

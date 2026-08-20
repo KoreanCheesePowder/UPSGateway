@@ -1,0 +1,10 @@
+name: C.P Eaton UPS Gateway
+packageKey: cp-eaton-ups-gateway-v212
+permissions:
+  lan: {}
+  discovery: {}
+profiles:
+- id: cp-eaton-ups-gateway
+  file: profiles/eaton-ups-gateway.yml
+- id: cp-eaton-ups-device-dashboard
+  file: profiles/eaton-ups-device.yml

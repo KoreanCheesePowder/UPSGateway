@@ -1,0 +1,12 @@
+{
+  "tag": "ko",
+  "label": "부하율",
+  "attributes": {
+    "load": {
+      "label": "부하율",
+      "displayTemplate": "{{value}}%",
+      "i18n": {}
+    }
+  },
+  "commands": {}
+}

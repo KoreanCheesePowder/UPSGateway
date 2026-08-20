@@ -1,0 +1,28 @@
+name: cp-eaton-ups-device-dashboard
+components:
+  - id: main
+    label: Eaton UPS
+    capabilities:
+      - id: buildbook37604.eatonupssummaryv294
+        version: 1
+      - id: battery
+        version: 1
+      - id: buildbook37604.upsRuntime
+        version: 1
+      - id: buildbook37604.eatonUpsLoad
+        version: 1
+      - id: powerSource
+        version: 1
+      - id: powerMeter
+        version: 1
+      - id: buildbook37604.eatonUpsStatus
+        version: 1
+      - id: buildbook37604.driverInformation
+        version: 1
+    categories:
+      - name: Battery
+metadata:
+  deviceType: Battery
+  ocfDeviceType: oic.d.battery
+  mnmn: SmartThingsCommunity
+  vid: d34aeed2-98c9-3aca-9646-bb0351bd1001

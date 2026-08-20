@@ -1,0 +1,13 @@
+{
+  "dashboard": {
+    "states": [{"label": "부하율  {{load.value}}%"}],
+    "actions": [],
+    "panelItems": []
+  },
+  "detailView": [{
+    "label": "부하율",
+    "displayType": "state",
+    "state": {"label": "{{load.value}}%"}
+  }],
+  "automation": {"conditions": [], "actions": []}
+}

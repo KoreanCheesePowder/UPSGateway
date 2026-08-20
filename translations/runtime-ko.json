@@ -1,0 +1,12 @@
+{
+  "tag": "ko",
+  "label": "예상시간",
+  "attributes": {
+    "runtimeText": {
+      "label": "예상시간",
+      "displayTemplate": "{{value}}",
+      "i18n": {}
+    }
+  },
+  "commands": {}
+}

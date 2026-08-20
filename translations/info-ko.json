@@ -1,0 +1,17 @@
+{
+  "tag": "ko",
+  "label": "제작자 / 버전",
+  "attributes": {
+    "author": {
+      "label": "제작자",
+      "displayTemplate": "{{value}}",
+      "i18n": {}
+    },
+    "driverVersion": {
+      "label": "버전",
+      "displayTemplate": "{{value}}",
+      "i18n": {}
+    }
+  },
+  "commands": {}
+}

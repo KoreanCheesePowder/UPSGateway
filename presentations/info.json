@@ -1,0 +1,27 @@
+{
+  "dashboard": {
+    "states": [],
+    "actions": [],
+    "panelItems": []
+  },
+  "detailView": [
+    {
+      "label": "제작자",
+      "displayType": "state",
+      "state": {
+        "label": "{{author.value}}"
+      }
+    },
+    {
+      "label": "버전",
+      "displayType": "state",
+      "state": {
+        "label": "{{driverVersion.value}}"
+      }
+    }
+  ],
+  "automation": {
+    "conditions": [],
+    "actions": []
+  }
+}
