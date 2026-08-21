@@ -1,4 +1,4 @@
-name: C.P Eaton UPS Gateway
+name: 치즈가루 Eaton UPS 게이트웨이
 packageKey: cp-eaton-ups-gateway-v212
 permissions:
   lan: {}
