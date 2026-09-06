@@ -2,7 +2,7 @@ $ErrorActionPreference = "Stop"
 Set-Location $PSScriptRoot
 
 Write-Host "==============================================="
-Write-Host " C.P Eaton UPS Gateway Edge Driver v3.0.0"
+Write-Host " C.P Eaton UPS Gateway Edge Driver v3.0.1"
 Write-Host "==============================================="
 Write-Host ""
 
@@ -39,7 +39,7 @@ $profile = [regex]::Replace($profile, '(?m)^\s*vid:\s*.*$', "  vid: $vid")
 Write-Host "Presentation VID: $vid"
 Write-Host "UPS profile: cp-eaton-ups-device-dashboard"
 
-Write-Host "[2/2] Packaging/installing v3.0.0..."
+Write-Host "[2/2] Packaging/installing v3.0.1..."
 & smartthings edge:drivers:package . --install
 if ($LASTEXITCODE -ne 0) { throw "Driver package/install failed." }
 

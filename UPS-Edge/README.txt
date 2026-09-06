@@ -1,4 +1,4 @@
-C.P Eaton UPS Gateway Edge Driver v3.0.0
+C.P Eaton UPS Gateway Edge Driver v3.0.1
 
 변경 사항
 - 요약정보에 '예상시간' + '부하율'을 같은 대시보드 그룹으로 표시
@@ -11,6 +11,7 @@ C.P Eaton UPS Gateway Edge Driver v3.0.0
 - 기존 Driver ID/packageKey 유지
 - SmartThings 토큰 없이 NAS UPS 로거의 로컬 API를 직접 조회
 - Gateway 설정에서 NAS IP, 포트 8766, 확인 주기 60초 지정
+- Gateway 생성 및 설정 저장 시 server-room-01 UPS 기기 즉시 생성
 
 설치
 1. ZIP 압축 해제

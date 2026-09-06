@@ -19,7 +19,7 @@ local load_cap = capabilities[CAP_LOAD]
 local info_cap = capabilities[CAP_INFO]
 local summary_cap = capabilities[CAP_SUMMARY]
 
-local DRIVER_VERSION = "v3.0.0"
+local DRIVER_VERSION = "v3.0.1"
 local GATEWAY_DNI = "eaton-ups-gateway"
 local UPS_PROFILE = "cp-eaton-ups-device-dashboard"
 local POLL_TIMER_FIELD = "eaton_ups_local_poll_timer_v1"
@@ -273,6 +273,7 @@ local function added(driver, device)
   emit_info(device)
 
   if device.device_network_id == GATEWAY_DNI then
+    create_ups(driver, "server-room-01", "918plus Eaton UPS")
     start_poll_timer(driver, device)
   else
     -- Force existing UPS devices onto the refreshed profile/VID. Repackaging a
@@ -289,6 +290,7 @@ end
 
 local function info_changed(driver, device, event, args)
   if device.device_network_id == GATEWAY_DNI then
+    create_ups(driver, "server-room-01", "918plus Eaton UPS")
     device:set_field(FAILURES_FIELD, 0)
     start_poll_timer(driver, device)
   end
