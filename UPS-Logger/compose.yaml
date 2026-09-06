@@ -1,0 +1,17 @@
+services:
+  eaton-ups-gateway:
+    image: python:3.12-alpine
+    container_name: eaton-ups-gateway
+    restart: unless-stopped
+    environment:
+      CONFIG_PATH: "/app/config.json"
+      DATA_DIR: "/data"
+      LOCAL_API_HOST: "0.0.0.0"
+      LOCAL_API_PORT: "8766"
+    ports:
+      - "8766:8766"
+    volumes:
+      - ./config.json:/app/config.json:ro
+      - ./gateway.py:/app/gateway.py:ro
+      - ./data:/data
+    command: ["python", "-u", "/app/gateway.py"]

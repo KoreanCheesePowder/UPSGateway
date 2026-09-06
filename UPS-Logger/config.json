@@ -1,0 +1,15 @@
+{
+  "logger": {
+    "poll_seconds": 60
+  },
+  "ups": [
+    {
+      "id": "server-room-01",
+      "name": "918plus Eaton UPS",
+      "host": "192.168.1.209",
+      "port": 3493,
+      "nut_name": "ups",
+      "rated_watts": 400
+    }
+  ]
+}

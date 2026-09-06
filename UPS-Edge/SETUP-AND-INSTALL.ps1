@@ -2,7 +2,7 @@ $ErrorActionPreference = "Stop"
 Set-Location $PSScriptRoot
 
 Write-Host "==============================================="
-Write-Host " C.P Eaton UPS Gateway Edge Driver v2.9.3 dashboard + routine fix"
+Write-Host " C.P Eaton UPS Gateway Edge Driver v3.0.0"
 Write-Host "==============================================="
 Write-Host ""
 
@@ -39,11 +39,11 @@ $profile = [regex]::Replace($profile, '(?m)^\s*vid:\s*.*$', "  vid: $vid")
 Write-Host "Presentation VID: $vid"
 Write-Host "UPS profile: cp-eaton-ups-device-dashboard"
 
-Write-Host "[2/2] Packaging/installing v2.9.3 dashboard + routine fix..."
+Write-Host "[2/2] Packaging/installing v3.0.0..."
 & smartthings edge:drivers:package . --install
 if ($LASTEXITCODE -ne 0) { throw "Driver package/install failed." }
 
 Write-Host ""
 Write-Host "Update completed."
-Write-Host "Restart the Edge Driver/container once, then fully close and reopen SmartThings."
+Write-Host "Fully close and reopen SmartThings."
 Write-Host "The UPS device will switch itself to the refreshed profile. UPS status will be available as a Routine condition."

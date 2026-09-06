@@ -1,0 +1,42 @@
+name: cp-eaton-ups-gateway
+components:
+  - id: main
+    label: C.P Eaton UPS Gateway
+    capabilities:
+      - id: refresh
+        version: 1
+      - id: buildbook37604.eatonUpsGatewaySyncV2
+        version: 1
+      - id: buildbook37604.driverInformation
+        version: 1
+    categories:
+      - name: Hub
+preferences:
+  - name: nasIp
+    title: "NAS IP 주소"
+    description: "UPS 로거가 실행되는 NAS의 내부 IP"
+    required: true
+    preferenceType: string
+    definition:
+      stringType: text
+      minLength: 7
+      maxLength: 45
+      default: "192.168.1.100"
+  - name: apiPort
+    title: "로컬 API 포트"
+    description: "UPS 로거의 로컬 API 포트"
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 1
+      maximum: 65535
+      default: 8766
+  - name: refreshSeconds
+    title: "상태 확인 주기(초)"
+    description: "NAS의 UPS 상태를 확인하는 주기"
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 10
+      maximum: 3600
+      default: 60
